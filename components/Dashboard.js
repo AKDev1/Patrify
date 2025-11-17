@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { fetchUser, updateUser } from '@/actions/dbActions';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 
@@ -9,7 +9,6 @@ const Dashboard = () => {
   const { data: session, status, update } = useSession();
   const router = useRouter();
   const [form, setform] = useState({});
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (status === "unauthenticated") {
