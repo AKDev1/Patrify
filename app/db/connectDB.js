@@ -8,7 +8,7 @@ const connectDB = async () => {
   }
 
   try {
-    const conn = await mongoose.connect(`mongodb+srv://akdev_user:akdev_password@akdev.pnuivao.mongodb.net/patrify?retryWrites=true&appName=AKDEV`, {
+    const conn = await mongoose.connect(process.env.MONGODB_CONNECT_URL, {
       useNewUrlParser: true,
     });
     console.log(`MongoDB Connected: {conn.connection.host}`);
